@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#123b5d"><meta name="description" content="Order water in jerrycans from nearby campus suppliers.">
+<link rel="manifest" href="manifest.json"><link rel="stylesheet" href="styles.css">
+<title>Xorder — Campus Water Delivery</title>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#"><span class="brandmark">X</span><span>Xorder<small>WATER, WHEN YOU NEED IT</small></span></a>
+  <button id="installBtn" class="install hidden">Install app</button>
+  <button id="menuBtn" class="menu" aria-label="Open menu">☰</button>
+</header>
+<main>
+<section class="hero">
+  <div class="hero-copy"><p class="eyebrow">CAMPUS WATER DELIVERY</p><h1>Clean water.<br><em>At your doorstep.</em></h1>
+  <p class="hero-sub">Order water in jerrycans from available suppliers around your lodge.</p>
+  <a class="primary-btn" href="#suppliers">Find water <span>→</span></a>
+  </div>
+  <div class="hero-art" aria-hidden="true"><div class="sun"></div><div class="waterdrop">X</div><div class="can can-one"></div><div class="can can-two"></div><div class="art-caption">DELIVERED<br>TO YOUR LODGE</div></div>
+</section>
+<section class="quick-info"><div><b>01</b><span>Choose a supplier</span></div><div><b>02</b><span>Place your order</span></div><div><b>03</b><span>Receive your water</span></div></section>
+<section class="section" id="suppliers">
+  <div class="section-heading"><div><p class="eyebrow">LOCAL SUPPLIERS</p><h2>Water available now</h2><p class="muted">Demo listings — actual suppliers will appear after onboarding.</p></div><span class="live"><i></i> Availability</span></div>
+  <div class="filters"><input id="searchInput" type="search" placeholder="Search supplier or area…"><select id="sortSelect"><option value="recommended">Recommended</option><option value="price">Price: low to high</option></select></div>
+  <div id="supplierGrid" class="supplier-grid"></div>
+</section>
+<section class="trust"><div><span class="trust-icon">✓</span><div><b>Clear prices</b><p>See the price before ordering.</p></div></div><div><span class="trust-icon">⌂</span><div><b>Lodge delivery</b><p>Tell the supplier where to deliver.</p></div></div><div><span class="trust-icon">↗</span><div><b>Order updates</b><p>Follow each order's progress.</p></div></div></section>
+<footer><a class="brand footer-brand" href="#"><span class="brandmark">X</span><span>Xorder<small>WATER, WHEN YOU NEED IT</small></span></a><p>Campus water delivery, made simpler.</p><small>© <span id="year"></span> Xorder. Demo version.</small></footer>
+</main>
+<div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-card"><button id="closeModal" class="close" aria-label="Close">×</button><p class="eyebrow">PLACE AN ORDER</p><h2 id="modalTitle">Order water</h2><p id="supplierLine" class="muted"></p>
+<form id="orderForm">
+<label>Jerrycans <span>(20 litres each)</span><div class="stepper"><button type="button" id="minus">−</button><strong id="qty">1</strong><button type="button" id="plus">+</button></div></label>
+<label>Your name<input id="customerName" required placeholder="e.g. Michael"></label>
+<label>Phone number<input id="phone" required type="tel" placeholder="080…"></label>
+<label>Lodge / hostel<input id="lodge" required placeholder="Lodge name and area"></label>
+<label>Room / delivery details<input id="room" placeholder="Block, room number, directions"></label>
+<label>Payment method<select id="payment"><option>Cash on delivery</option><option>Bank transfer on delivery</option></select></label>
+<div class="total-row"><span>Estimated total</span><strong id="total">₦0</strong></div>
+<p class="fineprint">Demo only: this form saves a sample order on this device. It does not notify a real supplier or arrange delivery.</p>
+<button class="primary-btn full" type="submit">Place demo order <span>→</span></button>
+</form></div></div>
+<div id="toast" class="toast hidden"></div>
+<script src="app.js"></script>
+</body></html>
